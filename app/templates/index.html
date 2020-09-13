@@ -1,0 +1,10 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>News App</h1>
+<div>
+    <ul>
+        {% for source in sources %}
+        <h3><a href="/source/{{ source.id }}">{{ source.name }}</a></h3>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
