@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Balsamiq+Sans&display=swap');
+.top-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #dfe4de;
+  color: #126f80;
+  align-items: center;
+}
+.top-nav div p {
+  font-family: 'Balsamiq Sans', cursive;
+}
+.top-nav div span i {
+  padding: 0 10px;
+}
+div h1 {
+  font-family: 'Balsamiq Sans', cursive;
+  text-align: center;
+}
+div h1 span {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 40px;
+  color: #f95151;
+}
