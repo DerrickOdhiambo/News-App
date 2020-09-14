@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html'%}
+
+<!--Linking CSS-->
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}" />
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+{% endblock %} {% block navbar %}
+<div class="top-nav">
+  <div>
+    <p>Welcome to NewsPoint</p>
+  </div>
+  <div>
+    <span><i class="fab fa-pinterest"></i></span>
+    <span><i class="fab fa-facebook"></i></span>
+    <span><i class="fab fa-instagram"></i></span>
+    <span><i class="fab fa-twitter"></i></span>
+  </div>
+</div>
+<nav class="text-center navbar-expand-lg navbar-light bg-light">
+  <div>
+    <h1><span>N</span>EWSPOINT</h1>
+  </div>
+</nav>
+{% endblock%} {% block content%} {% endblock %}
