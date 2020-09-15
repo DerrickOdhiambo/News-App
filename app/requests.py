@@ -23,7 +23,6 @@ def configure_request(app):
   everything_base_url = app.config['EVERYTHING_URL']
   sports_base_url = app.config['SPORTS_URL']
   business_base_url = app.config['BUSINESS_URL']
-  entertainment_base_url = app.config['ENTERTAINMENT_URL']
 
 def get_new():
   """
