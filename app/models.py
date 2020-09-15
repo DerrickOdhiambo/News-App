@@ -35,3 +35,30 @@ class Everything:
     self.publishedAt = publishedAt
     self.content = content
 
+class Sports:
+  """
+  Source articles for sports
+  """
+
+  def __init__(self, author, title, url, urlToImage,publishedAt, content):
+    self.author = author
+    self.title = title
+    self.url = url
+    self.image_path = urlToImage
+    self.publishedAt = publishedAt
+    self.content = content
+
+
+class Business:
+  """
+  Source articles for business stories
+  """
+
+  def __init__(self, author, title, url, urlToImage,publishedAt, content):
+    self.author = author
+    self.title = title
+    self.url = url
+    self.image_path = urlToImage
+    self.publishedAt = publishedAt
+    self.content = content
+
