@@ -1,5 +1,4 @@
-.image image {
-  height: 60vh;
+.image {
   width: 100%;
   overflow-x: hidden;
 }
