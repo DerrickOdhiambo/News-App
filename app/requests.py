@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import Sources,TopHeadlines,Everything,Sports,Business
+from .models import Sources,Articles,Everything,Sports,Business
 
 api_key = None
 
@@ -86,7 +86,7 @@ def process_source_data(top_headlines_list):
     publishedAt = item.get('publishedAt')
     content = item.get('content')
 
-    articles_objects = TopHeadlines(author, title, url, image_path, publishedAt, content)
+    articles_objects = Articles(author, title, url, image_path, publishedAt, content)
     top_results.append(articles_objects)
 
   return top_results

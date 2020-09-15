@@ -8,7 +8,7 @@ class Sources:
     self.description = description
 
 
-class TopHeadlines:
+class Articles:
   """
   Source articles from different sources
   """
