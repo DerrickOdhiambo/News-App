@@ -10,7 +10,7 @@
     alt=""
   />
   <div id="overlay">
-    <h2 class="text-lower">
+    <h2 class="text-capitalize">
       <span>For all your latest news</span> <br />"know your world"
     </h2>
   </div>
@@ -18,6 +18,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-5">
+      <h3 class="m-3 text-danger">News Sources</h3>
+
       {% for source in sources %}
       <div class="card">
         <div class="card-header">
@@ -34,6 +36,7 @@
       {% endfor %}
     </div>
     <div class="col-md-7">
+      <h3 class="m-3 text-danger">Top Trending News</h3>
       {% for article in everything %}
       <div class="card">
         <img
