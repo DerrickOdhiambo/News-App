@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import Sources,TopHeadlines,Everything
+from .models import Sources,TopHeadlines,Everything,Sports,Business
 
 api_key = None
 
@@ -9,12 +9,21 @@ everything_base_url = None
 
 top_headlines_base_url = None
 
+sports_base_url = None
+
+business_base_url = None
+
+entertainment_base_url = None
+
 def configure_request(app):
-  global api_key,base_url,top_headlines_base_url,everything_base_url
+  global api_key,base_url,top_headlines_base_url,everything_base_url,sports_base_url,business_base_url,entertainment_base_url
   api_key = app.config['NEW_API_KEY']
   base_url = app.config['SOURCE_BASE_URL']
   top_headlines_base_url = app.config['TOP_HEADLINES_URL']
   everything_base_url = app.config['EVERYTHING_URL']
+  sports_base_url = app.config['SPORTS_URL']
+  business_base_url = app.config['BUSINESS_URL']
+  entertainment_base_url = app.config['ENTERTAINMENT_URL']
 
 def get_new():
   """
@@ -121,3 +130,71 @@ def process_everything_results(everything_results_list) :
     everything_results.append(everything_object)
 
   return everything_results
+
+
+def get_sports():
+  get_sports_url = sports_base_url.format(api_key)
+
+  with urllib.request.urlopen(get_sports_url) as url:
+    sports_data = url.read()
+    sports_data_response = json.loads(sports_data)
+
+    sports_results = None
+
+    if sports_data_response['articles']:
+      sports_results_list = sports_data_response['articles']
+      sports_results = process_sports_results(sports_results_list)
+
+  return sports_results
+
+
+def process_sports_results(sports_results_list):
+  sports_results = []
+
+  for article in sports_results_list:
+
+    author = article.get('author')
+    title = article.get('title')
+    url = article.get('url')
+    image_path = article.get('urlToImage')
+    publishedAt = article.get('publishedAt')
+    content = article.get('content')
+
+    sports_object = Sports(author, title, url, image_path, publishedAt, content)
+    sports_results.append(sports_object)
+
+  return sports_results
+
+
+def get_business():
+  get_business_url = business_base_url.format(api_key)
+
+  with urllib.request.urlopen(get_business_url) as url:
+    business_data = url.read()
+    business_data_response = json.loads(business_data)
+
+    business_results = None
+
+    if business_data_response['articles']:
+      business_results_list = business_data_response['articles']
+      business_results = process_business_results(business_results_list)
+
+  return business_results
+
+
+def process_business_results(business_results_list):
+  business_results = []
+
+  for article in business_results_list:
+
+    author = article.get('author')
+    title = article.get('title')
+    url = article.get('url')
+    image_path = article.get('urlToImage')
+    publishedAt = article.get('publishedAt')
+    content = article.get('content')
+
+    business_object = Business(author, title, url, image_path, publishedAt, content)
+    business_results.append(business_object)
+
+  return business_results
