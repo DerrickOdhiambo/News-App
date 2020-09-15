@@ -47,3 +47,16 @@ h2 span {
 h2 {
   color: #525e76;
 }
+.navbar ul li {
+  list-style-type: none;
+  display: inline;
+  padding: 10px;
+  background-color: #dfe4de;
+}
+.navbar ul li:hover {
+  background-color: #cdd3cc;
+  text-decoration: none;
+}
+.navbar ul li a {
+  color: #126f80;
+}
