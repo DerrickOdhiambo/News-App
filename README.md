@@ -52,3 +52,9 @@
 ## Contact Information
 
 - Email: odhiamboderrick56@gmail.com
+
+## License
+
+MIT License
+
+Copyright (c) [2020] [DerrickOdhiambo]
